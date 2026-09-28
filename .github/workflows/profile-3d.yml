@@ -1,0 +1,42 @@
+name: GitHub 3D Contribution Calendar
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/profile-3d.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          
+      - name: Generate 3D Contribution Calendar
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          
+      - name: Commit & Push
+        run: |
+          git config user.name "Ruwinika Rodrigo"
+          git config user.email "truwinikarodrigo@gmail.com"
+          git add profile-3d-contrib/
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🎨 Update 3D contribution calendar [skip ci]"
+            git push origin main || true
+          fi

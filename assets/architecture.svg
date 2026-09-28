@@ -1,0 +1,316 @@
+<svg fill="none" viewBox="0 0 1000 480" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="arch-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080711"/>
+      <stop offset="50%" stop-color="#0E0D24"/>
+      <stop offset="100%" stop-color="#060513"/>
+    </linearGradient>
+
+    <!-- Stage Card Backgrounds -->
+    <linearGradient id="stage-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14112E" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0D0A22" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="pink-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+
+    <linearGradient id="purple-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+
+    <linearGradient id="green-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+
+    <!-- Glowing Border -->
+    <linearGradient id="arch-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Drop Shadow -->
+    <filter id="arch-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+
+    <pattern id="arch-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#4338CA" fill-opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .stage-title { font-size: 11.5px; font-weight: 700; letter-spacing: 0.8px; }
+    .card-label { font-size: 10px; fill: #94A3B8; font-weight: 600; letter-spacing: 0.5px; }
+    .card-value { font-size: 12px; fill: #F8FAFC; font-weight: 600; }
+    .card-sub { font-size: 10.5px; fill: #94A3B8; }
+    
+    @keyframes pulse-flow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    .flow-pulse { animation: pulse-flow 2.5s infinite ease-in-out; }
+  </style>
+
+  <!-- Container Base -->
+  <rect x="2" y="2" width="996" height="476" rx="14" fill="url(#arch-bg)" filter="url(#arch-shadow)"/>
+  <rect x="2" y="2" width="996" height="476" rx="14" fill="url(#arch-grid)"/>
+  <rect x="2" y="2" width="996" height="476" rx="14" fill="none" stroke="url(#arch-border)" stroke-width="1.5"/>
+
+  <!-- Top Bar -->
+  <g transform="translate(30, 22)">
+    <circle cx="6" cy="6" r="5" fill="#EF4444"/>
+    <circle cx="24" cy="6" r="5" fill="#F59E0B"/>
+    <circle cx="42" cy="6" r="5" fill="#10B981"/>
+
+    <text x="65" y="10" fill="#F472B6" class="mono" font-size="12.5" font-weight="800" letter-spacing="1.5px">
+      ENTERPRISE UI/UX &amp; FULL-STACK FRONTEND ARCHITECTURE
+    </text>
+
+    <!-- Status Badges -->
+    <g transform="translate(685, -2)">
+      <rect width="130" height="22" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="0.8"/>
+      <circle cx="12" cy="11" r="3.5" fill="#34D399" class="flow-pulse"/>
+      <text x="22" y="15" fill="#D1FAE5" class="mono" font-size="10" font-weight="700">WCAG: 2.1 AA COMPLIANT</text>
+    </g>
+
+    <g transform="translate(825, -2)">
+      <rect width="125" height="22" rx="4" fill="#2E1065" stroke="#A855F7" stroke-width="0.8"/>
+      <circle cx="12" cy="11" r="3.5" fill="#C084FC"/>
+      <text x="22" y="15" fill="#F3E8FF" class="mono" font-size="10" font-weight="700">PIPELINE: ACTIVE</text>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="30" y1="52" x2="970" y2="52" stroke="#1E1B4B" stroke-width="1"/>
+
+  <!-- ================= 4 ARCHITECTURAL STAGES ================= -->
+
+  <!-- STAGE 1: DESIGN SYSTEM & UX -->
+  <g transform="translate(30, 70)">
+    <rect width="215" height="315" rx="10" fill="url(#stage-bg)" stroke="#312E81" stroke-width="1"/>
+    <!-- Stage Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 205 0 Q 215 0 215 10 L 215 36 L 0 36 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="18" r="4" fill="#EC4899"/>
+    <text x="28" y="22" fill="#FDF2F8" class="mono stage-title">1. UI/UX &amp; DESIGN SYSTEM</text>
+
+    <!-- Node 1.1 -->
+    <g transform="translate(12, 48)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#EC4899"/>
+      <text x="26" y="21" class="sans card-value">UX Research &amp; Journeys</text>
+      <text x="26" y="38" class="sans card-sub">User Flows • Persona Specs</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 107 105 L 107 115" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 1.2 -->
+    <g transform="translate(12, 118)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#EC4899"/>
+      <text x="26" y="21" class="sans card-value">Figma &amp; Adobe XD</text>
+      <text x="26" y="38" class="sans card-sub">Design Tokens • Atomic Assets</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 107 175 L 107 185" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 1.3 -->
+    <g transform="translate(12, 188)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#EC4899"/>
+      <text x="26" y="21" class="sans card-value">Interactive Prototyping</text>
+      <text x="26" y="38" class="sans card-sub">Micro-Interactions &amp; States</text>
+    </g>
+
+    <!-- Node 1.4: Tag -->
+    <g transform="translate(12, 252)">
+      <rect width="191" height="48" rx="6" fill="#0C0A20" stroke="#EC4899" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="14" y="20" class="mono card-label" fill="#F472B6">STAGE OUTPUT</text>
+      <text x="14" y="36" class="sans card-sub" fill="#F1F5F9">High-Fidelity Wireframes</text>
+    </g>
+  </g>
+
+  <!-- Flow Connector 1 -> 2 -->
+  <g transform="translate(245, 205)" opacity="0.85">
+    <path d="M 0 0 L 35 0" stroke="url(#pink-grad)" stroke-width="2" stroke-dasharray="4 4" class="flow-pulse"/>
+    <polygon points="35,0 28,-4 28,4" fill="#EC4899"/>
+  </g>
+
+  <!-- STAGE 2: FRONTEND COMPONENT ARCHITECTURE -->
+  <g transform="translate(280, 70)">
+    <rect width="215" height="315" rx="10" fill="url(#stage-bg)" stroke="#312E81" stroke-width="1"/>
+    <!-- Stage Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 205 0 Q 215 0 215 10 L 215 36 L 0 36 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="18" r="4" fill="#A855F7"/>
+    <text x="28" y="22" fill="#FDF2F8" class="mono stage-title">2. FRONTEND ARCHITECTURE</text>
+
+    <!-- Node 2.1 -->
+    <g transform="translate(12, 48)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#A855F7"/>
+      <text x="26" y="21" class="sans card-value">Angular Framework</text>
+      <text x="26" y="38" class="sans card-sub">Standalone Views • Routing</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 107 105 L 107 115" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 2.2 -->
+    <g transform="translate(12, 118)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#A855F7"/>
+      <text x="26" y="21" class="sans card-value">Blazor &amp; .NET Stack</text>
+      <text x="26" y="38" class="sans card-sub">C# WebAssembly • Razor UI</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 107 175 L 107 185" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 2.3 -->
+    <g transform="translate(12, 188)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#A855F7"/>
+      <text x="26" y="21" class="sans card-value">GSAP &amp; CSS Motion</text>
+      <text x="26" y="38" class="sans card-sub">Micro-Animations • SCSS</text>
+    </g>
+
+    <!-- Node 2.4: Tag -->
+    <g transform="translate(12, 252)">
+      <rect width="191" height="48" rx="6" fill="#0C0A20" stroke="#A855F7" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="14" y="20" class="mono card-label" fill="#C084FC">STAGE OUTPUT</text>
+      <text x="14" y="36" class="sans card-sub" fill="#F1F5F9">Atomic UI Component Library</text>
+    </g>
+  </g>
+
+  <!-- Flow Connector 2 -> 3 -->
+  <g transform="translate(495, 205)" opacity="0.85">
+    <path d="M 0 0 L 35 0" stroke="url(#purple-grad)" stroke-width="2" stroke-dasharray="4 4" class="flow-pulse"/>
+    <polygon points="35,0 28,-4 28,4" fill="#818CF8"/>
+  </g>
+
+  <!-- STAGE 3: POWER PLATFORM & INTEGRATION -->
+  <g transform="translate(530, 70)">
+    <rect width="215" height="315" rx="10" fill="url(#stage-bg)" stroke="#312E81" stroke-width="1"/>
+    <!-- Stage Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 205 0 Q 215 0 215 10 L 215 36 L 0 36 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="18" r="4" fill="#38BDF8"/>
+    <text x="28" y="22" fill="#FDF2F8" class="mono stage-title">3. POWER PLATFORM &amp; APIS</text>
+
+    <!-- Node 3.1 -->
+    <g transform="translate(12, 48)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#38BDF8"/>
+      <text x="26" y="21" class="sans card-value">Microsoft Power Apps</text>
+      <text x="26" y="38" class="sans card-sub">Canvas &amp; Model-Driven Apps</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 107 105 L 107 115" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 3.2 -->
+    <g transform="translate(12, 118)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#38BDF8"/>
+      <text x="26" y="21" class="sans card-value">Power Automate Flows</text>
+      <text x="26" y="38" class="sans card-sub">Trigger Rules • Automated Logic</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 107 175 L 107 185" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 3.3 -->
+    <g transform="translate(12, 188)">
+      <rect width="191" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#38BDF8"/>
+      <text x="26" y="21" class="sans card-value">SharePoint Intranet</text>
+      <text x="26" y="38" class="sans card-sub">Modern Webparts &amp; Portals</text>
+    </g>
+
+    <!-- Node 3.4: Tag -->
+    <g transform="translate(12, 252)">
+      <rect width="191" height="48" rx="6" fill="#0C0A20" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="14" y="20" class="mono card-label" fill="#38BDF8">STAGE OUTPUT</text>
+      <text x="14" y="36" class="sans card-sub" fill="#F1F5F9">Automated Enterprise Services</text>
+    </g>
+  </g>
+
+  <!-- Flow Connector 3 -> 4 -->
+  <g transform="translate(745, 205)" opacity="0.85">
+    <path d="M 0 0 L 35 0" stroke="url(#cyan-grad)" stroke-width="2" stroke-dasharray="4 4" class="flow-pulse"/>
+    <polygon points="35,0 28,-4 28,4" fill="#38BDF8"/>
+  </g>
+
+  <!-- STAGE 4: ACCESSIBILITY & PRODUCTION DELIVERY -->
+  <g transform="translate(780, 70)">
+    <rect width="190" height="315" rx="10" fill="url(#stage-bg)" stroke="#312E81" stroke-width="1"/>
+    <!-- Stage Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 180 0 Q 190 0 190 10 L 190 36 L 0 36 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="18" r="4" fill="#10B981"/>
+    <text x="28" y="22" fill="#FDF2F8" class="mono stage-title">4. ACCESSIBILITY &amp; PROD</text>
+
+    <!-- Node 4.1 -->
+    <g transform="translate(12, 48)">
+      <rect width="166" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#10B981"/>
+      <text x="26" y="21" class="sans card-value">WCAG 2.1 AA Audit</text>
+      <text x="26" y="38" class="sans card-sub">Screen Readers • Contrast</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 95 105 L 95 115" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 4.2 -->
+    <g transform="translate(12, 118)">
+      <rect width="166" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#10B981"/>
+      <text x="26" y="21" class="sans card-value">Performance &amp; CWV</text>
+      <text x="26" y="38" class="sans card-sub">Lazy Loading • Tree Shaking</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M 95 175 L 95 185" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <!-- Node 4.3 -->
+    <g transform="translate(12, 188)">
+      <rect width="166" height="52" rx="6" fill="#100D28" stroke="#312E81" stroke-width="1"/>
+      <circle cx="14" cy="18" r="3" fill="#10B981"/>
+      <text x="26" y="21" class="sans card-value">Production Deployment</text>
+      <text x="26" y="38" class="sans card-sub">Azure • CI/CD Cloud Delivery</text>
+    </g>
+
+    <!-- Node 4.4: Tag -->
+    <g transform="translate(12, 252)">
+      <rect width="166" height="48" rx="6" fill="#064E3B" stroke="#10B981" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="14" y="20" class="mono card-label" fill="#34D399">FINAL DELIVERABLE</text>
+      <text x="14" y="36" class="sans card-sub" fill="#D1FAE5">Enterprise Ready System</text>
+    </g>
+  </g>
+
+  <!-- Bottom Metric Bar -->
+  <g transform="translate(30, 400)">
+    <rect width="940" height="56" rx="8" fill="#0C0A20" stroke="#312E81" stroke-width="1"/>
+    <g transform="translate(20, 16)">
+      <circle cx="8" cy="12" r="4" fill="#EC4899"/>
+      <text x="22" y="16" class="mono" fill="#F472B6" font-size="11" font-weight="700">CORE GUARANTEE:</text>
+      <text x="150" y="16" class="sans" fill="#CBD5E1" font-size="12.5" font-weight="500">
+        Pixel-Perfect Design Fidelity • Strict WCAG Accessibility Standards • Modular Component Architecture • Sub-second Load Times
+      </text>
+    </g>
+  </g>
+</svg>

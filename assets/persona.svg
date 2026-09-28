@@ -1,0 +1,218 @@
+<svg fill="none" viewBox="0 0 1000 440" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="hud-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080711"/>
+      <stop offset="50%" stop-color="#0E0D22"/>
+      <stop offset="100%" stop-color="#060513"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14112E" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0E0B22" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="pink-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <linearGradient id="purple-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="gold-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="hud-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <pattern id="dot-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#4338CA" fill-opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .header-title { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+    .section-title { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; }
+    .label { font-size: 10px; font-weight: 600; color: #94A3B8; letter-spacing: 0.05em; }
+    .val { font-size: 12.5px; font-weight: 600; fill: #F1F5F9; }
+    .val-highlight { font-size: 13px; font-weight: 700; fill: #F472B6; }
+    .pulse-dot { animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect x="2" y="2" width="996" height="436" rx="14" fill="url(#hud-bg)" filter="url(#hud-shadow)"/>
+  <rect x="2" y="2" width="996" height="436" rx="14" fill="url(#dot-grid)"/>
+  <rect x="2" y="2" width="996" height="436" rx="14" fill="none" stroke="url(#border-glow)" stroke-width="1.5"/>
+
+  <!-- Top Status Bar -->
+  <g transform="translate(30, 22)">
+    <!-- Terminal Indicator Dots -->
+    <circle cx="6" cy="6" r="5" fill="#EF4444"/>
+    <circle cx="24" cy="6" r="5" fill="#F59E0B"/>
+    <circle cx="42" cy="6" r="5" fill="#10B981"/>
+
+    <!-- Bar Title -->
+    <text x="65" y="10" fill="#F472B6" class="mono header-title">ENGINEERING SPECIFICATION // PROFILE TELEMETRY</text>
+
+    <!-- Status Indicators -->
+    <g transform="translate(680, -2)">
+      <rect width="125" height="22" rx="4" fill="#064E3B" stroke="#10B981" stroke-width="0.8"/>
+      <circle cx="12" cy="11" r="3.5" fill="#34D399" class="pulse-dot"/>
+      <text x="22" y="15" fill="#D1FAE5" class="mono" font-size="10.5" font-weight="700">STATUS: ACTIVE</text>
+    </g>
+
+    <g transform="translate(815, -2)">
+      <rect width="125" height="22" rx="4" fill="#2E1065" stroke="#A855F7" stroke-width="0.8"/>
+      <circle cx="12" cy="11" r="3.5" fill="#C084FC"/>
+      <text x="22" y="15" fill="#F3E8FF" class="mono" font-size="10.5" font-weight="700">TIER: SENIOR DEV</text>
+    </g>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="30" y1="52" x2="970" y2="52" stroke="#1E1B4B" stroke-width="1"/>
+
+  <!-- ================= GRID LAYOUT: 3 COLUMNS / CARDS ================= -->
+
+  <!-- Card 1: Core Persona & Identity (Left Column) -->
+  <g transform="translate(30, 68)">
+    <rect width="300" height="255" rx="10" fill="url(#card-bg)" stroke="#312E81" stroke-width="1"/>
+    
+    <!-- Card Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 290 0 Q 300 0 300 10 L 300 34 L 0 34 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="17" r="4" fill="#EC4899"/>
+    <text x="28" y="21" fill="#FDF2F8" class="mono section-title">ENGINEERING IDENTITY</text>
+
+    <!-- Spec Fields -->
+    <g transform="translate(18, 54)">
+      <!-- Name -->
+      <text y="0" class="sans label">FULL NAME</text>
+      <text y="18" class="sans val">Ruwinika Rodrigo</text>
+
+      <!-- Role -->
+      <text y="44" class="sans label">CORE SPECIALIZATION</text>
+      <text y="62" class="sans val-highlight">Senior Frontend &amp; UI/UX Engineer</text>
+
+      <!-- Experience -->
+      <text y="88" class="sans label">EXPERIENCE DEPTH</text>
+      <text y="106" class="sans val">Senior Level (XSoft, Programus, Tech One)</text>
+
+      <!-- Location -->
+      <text y="132" class="sans label">LOCATION &amp; TIMEZONE</text>
+      <text y="150" class="sans val">Bandaragama, Sri Lanka 🇱🇰 (UTC+5:30)</text>
+
+      <!-- Availability -->
+      <text y="176" class="sans label">COLLABORATION STATUS</text>
+      <text y="194" class="sans" fill="#34D399" font-weight="700" font-size="13">Available for Senior Roles &amp; UI/UX</text>
+    </g>
+  </g>
+
+  <!-- Card 2: Architectural Capabilities (Center Column) -->
+  <g transform="translate(350, 68)">
+    <rect width="300" height="255" rx="10" fill="url(#card-bg)" stroke="#312E81" stroke-width="1"/>
+    
+    <!-- Card Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 290 0 Q 300 0 300 10 L 300 34 L 0 34 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="17" r="4" fill="#A855F7"/>
+    <text x="28" y="21" fill="#FDF2F8" class="mono section-title">CORE ENGINEERING DOMAINS</text>
+
+    <!-- Capabilities List -->
+    <g transform="translate(18, 54)">
+      <!-- Item 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="264" height="32" rx="6" fill="#131030" stroke="#312E81" stroke-width="1"/>
+        <circle cx="14" cy="16" r="3" fill="#EC4899"/>
+        <text x="26" y="20" class="sans" fill="#F8FAFC" font-size="12" font-weight="600">UI/UX Design Systems &amp; Figma</text>
+      </g>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 39)">
+        <rect width="264" height="32" rx="6" fill="#131030" stroke="#312E81" stroke-width="1"/>
+        <circle cx="14" cy="16" r="3" fill="#A855F7"/>
+        <text x="26" y="20" class="sans" fill="#F8FAFC" font-size="12" font-weight="600">Angular 17+ Enterprise Applications</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(0, 78)">
+        <rect width="264" height="32" rx="6" fill="#131030" stroke="#312E81" stroke-width="1"/>
+        <circle cx="14" cy="16" r="3" fill="#6366F1"/>
+        <text x="26" y="20" class="sans" fill="#F8FAFC" font-size="12" font-weight="600">Blazor WebAssembly &amp; .NET Stack</text>
+      </g>
+
+      <!-- Item 4 -->
+      <g transform="translate(0, 117)">
+        <rect width="264" height="32" rx="6" fill="#131030" stroke="#312E81" stroke-width="1"/>
+        <circle cx="14" cy="16" r="3" fill="#38BDF8"/>
+        <text x="26" y="20" class="sans" fill="#F8FAFC" font-size="12" font-weight="600">Microsoft Power Apps &amp; Automate</text>
+      </g>
+
+      <!-- Item 5 -->
+      <g transform="translate(0, 156)">
+        <rect width="264" height="32" rx="6" fill="#131030" stroke="#312E81" stroke-width="1"/>
+        <circle cx="14" cy="16" r="3" fill="#10B981"/>
+        <text x="26" y="20" class="sans" fill="#F8FAFC" font-size="12" font-weight="600">WCAG Accessibility &amp; SharePoint</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Card 3: Proven Impact & Credentials (Right Column) -->
+  <g transform="translate(670, 68)">
+    <rect width="300" height="255" rx="10" fill="url(#card-bg)" stroke="#312E81" stroke-width="1"/>
+    
+    <!-- Card Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 290 0 Q 300 0 300 10 L 300 34 L 0 34 Z" fill="#1E1B4B"/>
+    <circle cx="16" cy="17" r="4" fill="#F59E0B"/>
+    <text x="28" y="21" fill="#FDF2F8" class="mono section-title">IMPACT &amp; CREDENTIALS</text>
+
+    <!-- Accolades -->
+    <g transform="translate(18, 50)">
+      <!-- Highlight Award Card -->
+      <rect width="264" height="66" rx="6" fill="#2E1065" stroke="#7C3AED" stroke-width="1"/>
+      <circle cx="14" cy="18" r="4" fill="#F59E0B"/>
+      <text x="26" y="22" fill="#FDE047" class="sans" font-size="12" font-weight="700">DEAN'S LIST HONORS 🎖️</text>
+      <text x="14" y="42" fill="#E9D5FF" class="sans" font-size="11" font-weight="600">KDU Faculty of Computing (Intake 35)</text>
+      <text x="14" y="56" fill="#C4B5FD" class="sans" font-size="10.5">1st Place All-Island Senior Music Solo</text>
+
+      <!-- Credentials List -->
+      <g transform="translate(0, 80)">
+        <text y="14" fill="#94A3B8" class="sans label">VERIFIED ACCREDITATIONS</text>
+        <text y="34" class="sans val" font-size="12">📜 Cisco Certified Network Associate (CCNA)</text>
+        <text y="54" class="sans val" font-size="12">🎨 Diploma in Interaction Design (Alison)</text>
+        <text y="74" class="sans val" font-size="12">📚 2x Co-Authored Research Papers (IoT / ML)</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Full-Width Banner: Philosophy & Mission -->
+  <g transform="translate(30, 338)">
+    <rect width="940" height="74" rx="10" fill="#0E0B24" stroke="#312E81" stroke-width="1"/>
+    
+    <g transform="translate(24, 24)">
+      <circle cx="10" cy="14" r="5" fill="#EC4899"/>
+      <text x="26" y="10" fill="#EC4899" class="mono" font-size="11" font-weight="700">ENGINEERING PHILOSOPHY &amp; DESIGN MISSION</text>
+      <text x="26" y="32" fill="#E2E8F0" class="sans" font-size="13" font-weight="500">
+        "Harmonizing human-centered UI/UX empathy with resilient front-end code and low-code Microsoft ecosystem speed to craft accessible, production-grade applications that users love."
+      </text>
+    </g>
+  </g>
+</svg>
